@@ -27,3 +27,56 @@
 1. 把开发程序自动部署到容器当中
 2. 开发程序部署到容器中，可以将他们打包起来，以镜像的方式交付，让软件运行在标准的环境当中，做到测试，运行环境相同。
 3. 进行版本管理
+
+###指令
+>使用没有权限的用户执行指令的时候前面要加上sudo（system user do），代表管理员权限
+
+#####下载docker（国内源）（请确认安装了curl）
+```
+curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+```
+#####查看所有镜像
+```
+docker images
+```
+#####删除所有镜像
+```
+docker rmi $(docker images | grep none | awk '{print $3}' | sort -r)
+```
+#####拉取镜像
+```
+docker pull <镜像名:tag>
+如：docker pull sameersbn/redmine:latest
+```
+#####查看正在运行的容器
+```
+docker ps
+docker ps -a为查看所有的容器，包括已经停止的。
+```
+#####创建运行一个容器（以grafana为例）
+```
+docker run -i -p 3000:3000 grafana/grafana
+```
+#####停止、启动、杀死一个容器
+```
+docker stop <容器名orID>
+docker start <容器名orID>
+docker kill <容器名orID>
+```
+#####删除容器
+```
+全部：docker rm $(docker ps -a -q)
+单个：docker rm <容器名orID>
+```
+#####构建自己的镜像
+```
+docker build -t <镜像名> <Dockerfile路径>
+如Dockerfile在当前路径：docker build -t xx/gitlab .
+```
+
+#####镜像迁移（从一台机到另一台机）
+需要先保存镜像，然后拷贝到另一台机器上，再加载镜像
+```
+保存：docker save busybox-1 > /home/save.tar
+加载：docker load < /home/save.tar
+```
