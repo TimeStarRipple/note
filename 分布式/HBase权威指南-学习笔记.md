@@ -17,4 +17,4 @@
     <value>file:///~/hbase</value>
   </property>
 ```
-![好的](http://github.com/TimeStarRipple/note/blob/master/分布式/images/codeDemo1.png)
+![好的](http://MarkdownPhotos/Res/test.jpg)
