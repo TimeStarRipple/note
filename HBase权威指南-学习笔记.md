@@ -17,4 +17,5 @@
     <value>file:///~/hbase</value>
   </property>
 ```
-![好的](http://github.com/TimeStarRipple/note/blob/master/分布式/images/codeDemo1.png)
+插入图片时要把blob换成raw
+![好的](https://github.com/TimeStarRipple/note/raw/master/%E5%88%86%E5%B8%83%E5%BC%8F/images/codeDemo1.png)
