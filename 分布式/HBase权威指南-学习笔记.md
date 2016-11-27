@@ -17,4 +17,9 @@
     <value>file:///~/hbase</value>
   </property>
 ```
-![好的](http://MarkdownPhotos/Res/test.jpg)
+![](images/codeDemo1.png)
+
+验证hbase启动成功
+```
+jps
+```

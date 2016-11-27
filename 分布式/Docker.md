@@ -55,13 +55,23 @@ docker ps -a为查看所有的容器，包括已经停止的。
 ```
 #####创建运行一个容器（以grafana为例）
 ```
-docker run -i -p 3000:3000 grafana/grafana
+docker run -i -p 3000:3000 grafana/grafana bash
+```
+备注：bash表示进入该容器
+#####查看容器信息
+```
+docker inspect 容器ID
+查看ip：docker inspect 容器ID | grep IPAddress
 ```
 #####停止、启动、杀死一个容器
 ```
 docker stop <容器名orID>
 docker start <容器名orID>
 docker kill <容器名orID>
+```
+#####退出当前容器
+```
+exit
 ```
 #####删除容器
 ```
