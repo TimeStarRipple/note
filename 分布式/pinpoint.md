@@ -26,7 +26,7 @@ Pinpoint能帮助分析整个系统架构，在分布式应用中通过追踪事
 
 ###pinpoint架构
 
-![](images/pinpoint1.png)
+![pinpoint架构图](https://github.com/TimeStarRipple/note/raw/master/%E5%88%86%E5%B8%83%E5%BC%8F/images/pinpoint1.png)
 
 如上图，Pinpoint由4部分组成：
 
@@ -118,11 +118,11 @@ log4j, Logback
 
 命令运行成功后的界面如下：
 Collector
-![收集器运行成功界面](images/ss_quickstart-collector-log.png)
+![收集器运行成功界面](https://github.com/TimeStarRipple/note/raw/master/%E5%88%86%E5%B8%83%E5%BC%8F/images/ss_quickstart-collector-log.png)
 TestApp
-![测试应用运行成功界面](images/ss_quickstart-testapp-log.png)
+![测试应用运行成功界面](https://github.com/TimeStarRipple/note/raw/master/%E5%88%86%E5%B8%83%E5%BC%8F/images/ss_quickstart-testapp-log.png)
 Web
-![数据显示运行成功界面](images/ss_quickstart-web-log.png)
+![数据显示运行成功界面](https://github.com/TimeStarRipple/note/raw/master/%E5%88%86%E5%B8%83%E5%BC%8F/images/ss_quickstart-web-log.png)
 注：以上所有应用启用，代码都给了180秒的启动时间，如果180秒内，没有检测到启动成功，程序会杀死启动进程，如果自己通过查看日志发现其实程序启动成功了，但是超过了180s被杀死了，可以注释掉相应`.sh`文件倒数第9行的kill指令，这样程序就能运行成功。
 
 ###查看应用
