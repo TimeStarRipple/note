@@ -13,6 +13,8 @@
 `sudo apt-get install vim`
 #####wget（能根据url下载文件）
 `sudo apt-get install wget`
+#####查找进程占用端口
+`netstat -ap | grep 8080`
 #####文件操作（复制，移动，删除）
 ```
 复制：sudo cp
@@ -23,6 +25,7 @@
 #####下载jdk
 ```
 wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/7u67-b01/jdk-7u67-linux-x64.tar.gz
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
 ```
 #####下载maven
 ```
@@ -52,9 +55,13 @@ dpkg --get-selections | grep ‘软件相关名称’
 dpkg -l |grep ^rc|awk '{print $2}' |sudo xargs dpkg -P
 ```
 
+
+
+
 ###快捷键
 ctrl + a - 光标移到行首
 ctrl + e - 光标移到行尾
 ctrl + u - 清除光标到行首的字符
 ctrl + w - 清除光标之前一个单词
 ctrl + k - 清除光标到行尾的字符
+
