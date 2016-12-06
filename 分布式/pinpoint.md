@@ -146,10 +146,37 @@ Web
 - Pinpoint Web (部署在一个web容器当中)
 - Pinpoint Agent (和监控的应用放在一起)
 
+
 ###安装要求
 **1.jdk1.7，jdk1.8，jdk1.6（可以用7代替）**
 **2.hbase1.2**
 **3.maven3.2版本以上**
+
+###安装下载包
+jdk
+```
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u112-b15/jdk-8u112-linux-x64.tar.gz
+
+export JAVA_HOME="/home/zyb/jdk1.8.0_112"
+export PATH=$JAVA_HOME/bin:$PATH:$JAVA_HOME/jre/bin
+export CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar:$JAVA_HOME/jre/lib
+```
+tomcat
+```
+wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz
+```
+Hbase
+```
+wget http://apache.mirror.cdnetworks.com/hbase/1.2.4/hbase-1.2.4-bin.tar.gz
+
+wget https://raw.githubusercontent.com/naver/pinpoint/master/hbase/scripts/hbase-create.hbase
+```
+pinpoint
+```
+wget https://github.com/naver/pinpoint/releases/download/1.6.0-RC2/pinpoint-agent-1.6.0-RC2.tar.gz
+wget https://github.com/naver/pinpoint/releases/download/1.6.0-RC2/pinpoint-collector-1.6.0-RC2.war
+wget https://github.com/naver/pinpoint/releases/download/1.6.0-RC2/pinpoint-web-1.6.0-RC2.war
+```
 
 ###Hbase安装
 >pinpoint1.6.0要求Hbase的版本为1.2
@@ -165,7 +192,7 @@ wget http://apache.mirror.cdnetworks.com/hbase/1.2.4/hbase-1.2.4-bin.tar.gz
 #####初始化表
 使用wget命令下载初始化脚本
 ```
-wget https://raw.githubusercontent.com/naver/pinpoint/master/hbase/scripts/hbase-create.hbase -P /root/pp/
+wget https://raw.githubusercontent.com/naver/pinpoint/master/hbase/scripts/hbase-create.hbase
 ```
 在HBase目录下，运行初始化脚本
 ```
@@ -332,13 +359,16 @@ agentStatus当中的表都有了数据，只有agentInfo表怎么都没有数据
 pinpoint介绍：
 https://github.com/naver/pinpoint
 
-Demo安装:  https://github.com/naver/pinpoint/blob/master/quickstart/README.md
+Demo安装：
+https://github.com/naver/pinpoint/blob/master/quickstart/README.md
 
-完整安装:
+完整安装：
 https://github.com/naver/pinpoint/blob/master/doc/installation.md
 
-分布式完整安装:
+分布式完整安装：
 https://sconts.com/11
+
+Hbase的standalone模式需要运行在127.0.0.1上，你可以去/etc/hosts里检查一下，看看你的用户名所对应的IP是不是127.0.0.1，像ubuntu这种linux一般来说是会把你的IP设置成127.0.1.1的
 
 
 
