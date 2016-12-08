@@ -164,6 +164,8 @@ export CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar:$JAVA_HOME/jre
 tomcat
 ```
 wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz
+
+https://github.com/TimeStarRipple/note/raw/master/software/apache-tomcat-8.0.32.tar.gz
 ```
 Hbase
 ```
