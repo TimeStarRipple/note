@@ -341,7 +341,17 @@ profiler.collector.ip=10.210.228.50
 
 在web界面中查看结果
 
+##springboot运行脚本
 
+```
+java -javaagent:pinpoint-agent-1.6.0-RC2/pinpoint-bootstrap-1.6.0-RC2.jar -Dpinpoint.agentId=pinpointTest -Dpinpoint.applicationName=pinpoint-agent -jar pinpoint-agent.jar
+```
+
+dockerfile更换时区
+```
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+```
 
 ##学习总结
 

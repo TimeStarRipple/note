@@ -114,9 +114,10 @@ docker ps -a为查看所有的容器，包括已经停止的。
 
 docker run -i -p 3000:3000 grafana/grafana bash
 
+docker run -ti zyb/pingpoint
 ```
 
-备注：bash表示进入该容器
+备注：bash表示进入该容器，ti以交互式命令运行，进入容器
 
 #####查看容器信息
 
