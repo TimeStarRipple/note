@@ -367,6 +367,8 @@ agentStatus当中的表都有了数据，只有agentInfo表怎么都没有数据
 
 最后发现，虽然删除了hbase的表数据，但是hbase的表都注册到zk中了，所以需要把zk中的数据也要清理掉......
 
+4.所有数据正常显示，只有CPU数据没有显示，是因为公司镜像里面的jdk使用的是openjdk，pinpoint默认不支持，需要在agent的pinpoint.config中加入一个参数`profiler.jvm.vendor.name=Oracle`就行了
+
 ##参考文档
 pinpoint介绍：
 https://github.com/naver/pinpoint

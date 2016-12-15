@@ -59,11 +59,9 @@ wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-
 #####配置jdk
 
 ```
-
+/usr/lib/jvm/java-1.8.0-openjdk-amd64
 export JAVA_HOME="/home/zyb/jdk1.8.0_112"
-
 export PATH=$JAVA_HOME/bin:$PATH:$JAVA_HOME/jre/bin
-
 export CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tool.jar:$JAVA_HOME/jre/lib
 
 ```
@@ -94,6 +92,11 @@ wget http://apache.mirror.anlx.net/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar
 
 ```
 
+#####下载hadoop
+```
+wget http://mirrors.hust.edu.cn/apache/hadoop/common/hadoop-2.6.5/hadoop-2.6.5.tar.gz
+```
+
 #####解压文件
 
 ```
@@ -102,7 +105,38 @@ tar -xvzf pinpoint-agent-1.5.1.tar.gz
 
 ```
 
+######ssh启动
+```
+service ssh start
+```
 
+######python传文件
+```
+python -m SimpleHTTPServer
+curl -o id_rsa.pub.slave02 slave01:8000/id_rsa.pub
+```
+
+######后台程序弹出来运行
+```
+fg
+```
+
+#####设置时区
+```
+sudo dpkg-reconfigure tzdata
+```
+
+1、利用chmod修改权限：
+
+对Document/目录下的所有子文件与子目录执行相同的权限变更：
+
+chmod -R 700 Document/
+
+-R参数是递归 处理目录下的所有文件以及子文件夹
+
+700是变更后的权限表示（只有所有者有读和写以及执行的权限）
+
+Document/ 是需要执行的目录
 
 #####卸载软件
 

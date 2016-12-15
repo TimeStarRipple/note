@@ -96,3 +96,10 @@ HBase中的所有数据文件都存储在Hadoop HDFS文件系统上，包括上�
 
 ###ROOT表和META表
 用户表的Regions元数据被存储在.META.表中，随着Region的增多，.META.表中的数据也会增大，并分裂成多个Regions。为了定位.META.表中各个Regions的位置，把.META.表中的所有Regions的元数据保存在-ROOT-表中，最后由Zookeeper记录-ROOT-表的位置信息。所有客户端访问用户数据前，需要首先访问Zookeeper获得-ROOT-的位置，然后方位-ROOT-表获得.META.表的位置，最后根据.META.表中的信息确定用户数据存放的位置，-ROOT-表永远不会被分割，它只有一个Region，这样可以保证最多需要三次跳转就可以定位任意一个Region。为了加快访问速度，.META.表的Regions全部保存在内存中，如果.META.表中的每一行在内存中占大约1KB，且每个Region限制为128M，下图中的三层结构可以保存Regions的数目为(128M/1KB)*(128/1KB)=2^34个。
+
+```
+<property>
+    <name>zookeeper.session.timeout</name>
+    <value>120000</value>
+</property>
+```
