@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+  gogs:
+    image: registry.saas.hand-china.com/tools/gogs:latest
+    ports:
+      - "10022:22"
+      - 10080:3000
+    volumes:
+      - /vagrant/gogs-data:/data
+    restart: always
+  mysql:
+    image: registry.saas.hand-china.com/tools/mysql:5.7.12
+    ports:
+      - 3306:3306
+    volumes:
+      - /vagrant/mysql-data:/var/lib/mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=gogs
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --init-connect='SET NAMES UTF8;' --innodb-flush-log-at-trx-commit=0
+  drone-server:
+    image: registry.saas.hand-china.com/tools/drone:0.5
+    ports:
+      - 8000:8000
+    volumes:
+      - /vagrant/drone-data:/var/lib/drone
+    restart: always
+    environment:
+      - DRONE_OPEN=true
+      - DRONE_ADMIN=octocat,adminuser
+      - DRONE_GOGS=true
+      - DRONE_GOGS_URL=http://192.168.202.130:10080
+      - DRONE_SECRET=handhand
+      # - DRONE_DATABASE_DRIVER=mysql
+      # - DRONE_DATABASE_DATASOURCE=root:root@tcp(192.168.58.13:3306)/drone?parseTime=true
+  drone-agent:
+    image: registry.saas.hand-china.com/tools/drone:0.5
+    command: agent
+    restart: always
+    depends_on: [ drone-server ]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - DRONE_SERVER=ws://192.168.202.130:8000/ws/broker
+      - DRONE_SECRET=handhand
