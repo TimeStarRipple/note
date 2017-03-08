@@ -12,6 +12,8 @@ java集合类主要由两个接口派生而出：Collection，Map
 
 ![](collection-1.png)
 
+下面是Map的集合树：
+
 ![](/java/images/collection-2.png)
 
 ## List
