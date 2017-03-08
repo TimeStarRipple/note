@@ -124,9 +124,9 @@ LinkedList
 
 常用的集合：
 
-HashSet：快速找到值  
+HashSet：快速找到值，可以为null  
 --&gt;LinkedHashSet：记录插入顺序，查找性能略低，但是迭代访问有很好的性能  
-SortedSet（接口）--&gt;TreeSet：可以排序的
+SortedSet（接口）--&gt;TreeSet：可以排序的，默认自然排序，从小到大，采用红黑树的数据结构
 
 EnumSet
 
