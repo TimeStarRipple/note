@@ -31,7 +31,9 @@ Deque-->ArrayDeque
 
 Collection是Set，Queue，List的父接口
 
-链接：<a href="https://www.nowcoder.com/questionTerminal/c5e932bcec3a46cbb9976eea0783e555">https://www.nowcoder.com/questionTerminal/c5e932bcec3a46cbb9976eea0783e555</a>
+链接：
+https://www.nowcoder.com/questionTerminal/c5e932bcec3a46cbb9976eea0783e555
+
 来源：牛客网
 
 ### HashTable和HashMap区别
