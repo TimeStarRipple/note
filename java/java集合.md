@@ -30,8 +30,6 @@ EnumSet
 
 性能间的比较：
 
-
-
 ## Map
 
 描述：有映射关系的集合
@@ -51,9 +49,9 @@ Deque--&gt;ArrayDeque
 
 Collection是Set，Queue，List的父接口
 
+## 问题
 
-
-### HashTable和HashMap区别
+### 1.HashTable和HashMap区别
 
 1. 继承不同。
   public class Hashtable extends Dictionary implements Map public class HashMap extends AbstractMap implements Map
