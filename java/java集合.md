@@ -20,9 +20,15 @@ java集合类主要由两个接口派生而出：Collection，Map
 
 常用方法：
 
+boolean add\(\)
+
+boolean addAll\(\)
+
+boolean remove\(\)
+
+boolean contains\(\)
 
 
-## 
 
 ## List
 
