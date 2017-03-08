@@ -36,9 +36,9 @@ boolean addAll\(Collection c\)：添加数据，成功返回true
 
 boolean remove\(Object O\)：删除数据O，如果有多个，只删除第一个，成功返回true
 
-boolean removeAll\(Collection c\)：删除所有数据，成功返回true
+boolean removeAll\(Collection c\)：删除集合中包含在c中的所有数据，删除一个或一个以上成功返回true
 
-boolean retainAll\(Collection c\)：删除非集合c中的数据，取两者交集，成功返回true
+boolean retainAll\(Collection c\)：删除非集合c中的数据，取两者交集，删除一个或一个以上成功返回true
 
 boolean clear\(\)：清空集合
 
@@ -53,6 +53,12 @@ boolean containsAll\(Collection c\)：是否包含集合
 Iterator iterator\(\)：转换成迭代器
 
 Object\[\] toArray\(\)：把集合转化成一个数组
+
+
+
+## Iterator
+
+Iterator迭代器：采用快速失败机制，一旦在迭代过程中发现集合被修改，程序会CocurrentModificationException异常，避免其他线程对集合修改，而引发问题
 
 
 
