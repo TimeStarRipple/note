@@ -20,39 +20,31 @@ java集合类主要由两个接口派生而出：Collection，Map
 
 常用方法：
 
-查看当前数据转换
+查看当前数据个数
 
-int size\(\)
+int size\(\)：数据个数
 
-boolean isEmpty\(\)
+boolean isEmpty\(\)：是否排空，空为true
 
+boolean add\(Object O\)：添加数据，成功返回true
 
+boolean addAll\(Collection c\)：添加数据，成功返回true
 
-boolean add\(Object O\)
+boolean remove\(Object O\)：删除数据，成功返回true
 
-boolean addAll\(Collection c\)
+boolean removeAll\(Collection c\)：删除所有数据，成功返回true
 
+boolean retainAll\(Collection c\)：删除非集合c中的数据，取两者交集，成功返回true
 
+boolean clear\(\)：清空集合
 
-boolean remove\(Object O\)
+boolean contains\(Object O\)：是否包含对象
 
-boolean removeAll\(Collection c\)
+boolean containsAll\(Collection c\)：是否包含集合
 
-boolean retainAll\(Collection c\)
+Iterator iterator\(\)：转换成迭代器
 
-boolean clear\(\)
-
-
-
-boolean contains\(Object O\)
-
-boolean containsAll\(Collection c\)
-
-
-
-Iterator iterator\(\)
-
-Object\[\] toArray\(\)
+Object\[\] toArray\(\)：把集合转化成一个数组
 
 ## List
 
