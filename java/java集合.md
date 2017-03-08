@@ -16,6 +16,14 @@ java集合类主要由两个接口派生而出：Collection，Map
 
 ![](/java/images/collection-2.png)
 
+## Collection
+
+常用方法：
+
+
+
+## 
+
 ## List
 
 描述：有序，重复的集合
