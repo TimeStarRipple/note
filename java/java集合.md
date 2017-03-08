@@ -34,6 +34,8 @@ HashMap
 --&gt;LinkedHashMap
 SortedMap（接口）--&gt;TreeMap
 
+EnumMap
+
 ## Queue
 
 队列
