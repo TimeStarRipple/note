@@ -18,7 +18,7 @@ java集合类主要由两个接口派生而出：Collection，Map
 
 ## Collection
 
-常用方法：
+### 常用方法：
 
 查看当前数据个数：
 
@@ -56,11 +56,57 @@ Object\[\] toArray\(\)：把集合转化成一个数组
 
 
 
+### 遍历的方法
+
+for
+
+```java
+for (String str : list)
+{
+    System.out.println(str);
+}
+```
+
+Iterator
+
+```
+Iterator<String> iterator = list.iterator();
+while (iterator.hasNext())
+{
+    System.out.println(iterator.next());
+}
+```
+
+foreach
+
+```
+list.forEach(str -> System.out.println(str));
+```
+
 ## Iterator
 
 Iterator迭代器：采用快速失败机制，一旦在迭代过程中发现集合被修改，程序会CocurrentModificationException异常，避免其他线程对集合修改，而引发问题
 
+```java
+List<String> list = new ArrayList<>();
+list.add("123");
+list.add("234");
+list.add("345");
 
+Iterator<String> iterator = list.iterator();
+while (iterator.hasNext())
+{
+    String str = iterator.next();
+    if("234".equals(str))
+    {
+        iterator.remove();
+    }
+}
+
+list.forEach(str -> System.out.println(str));
+```
+
+迭代器还是指向了原来数组的元素，你可以使用iterator删除他的值，但无法的值
 
 ## List
 
