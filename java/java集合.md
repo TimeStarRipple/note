@@ -28,7 +28,7 @@ boolean remove\(\)
 
 boolean contains\(\)
 
-
+Iterator iterator\(\)
 
 ## List
 
