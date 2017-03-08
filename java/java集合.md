@@ -126,7 +126,7 @@ LinkedList
 
 HashSet：快速找到值，可以为null  
 --&gt;LinkedHashSet：记录插入顺序，查找性能略低，但是迭代访问有很好的性能  
-SortedSet（接口）--&gt;TreeSet：可以排序的，默认自然排序，从小到大，采用红黑树的数据结构
+SortedSet（接口）--&gt;TreeSet：可以排序的，默认自然排序，从小到大，采用红黑树的数据结构，请不要添加一个可变变量，后期变化但是它排序不会调整
 
 EnumSet
 
@@ -134,7 +134,7 @@ EnumSet
 
 注：对象比较：
 
-实现Comparable接口，里面有一个compareTo的方法是比较方法，返回0为相等，返回整数是调用他的对象更大，负数是更小
+实现Comparable接口，里面有一个compareTo的方法是比较方法，返回0为相等，返回整数是调用他的对象更大，负数是更小，请保证它的结果和equals相同，对于TreeSet来说，它会使用compareTo进行判定是否相等，相等是不允许添加的
 
 ## Map
 
