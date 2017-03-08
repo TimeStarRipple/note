@@ -14,6 +14,8 @@ ArrayList
 Vector
 LinkedList
 
+性能间的比较：
+
 ## Set
 
 描述：无序，不可重复的集合
@@ -26,6 +28,10 @@ SortedSet（接口）--&gt;TreeSet：可以排序的
 
 EnumSet
 
+性能间的比较：
+
+
+
 ## Map
 
 描述：有映射关系的集合
@@ -36,6 +42,8 @@ SortedMap（接口）--&gt;TreeMap
 
 EnumMap
 
+性能间的比较：
+
 ## Queue
 
 队列
@@ -43,10 +51,7 @@ Deque--&gt;ArrayDeque
 
 Collection是Set，Queue，List的父接口
 
-链接：
-[https:\/\/www.nowcoder.com\/questionTerminal\/c5e932bcec3a46cbb9976eea0783e555](https://www.nowcoder.com/questionTerminal/c5e932bcec3a46cbb9976eea0783e555)
 
-来源：牛客网
 
 ### HashTable和HashMap区别
 
@@ -64,4 +69,8 @@ Collection是Set，Queue，List的父接口
 
 4. Hashtable和HashMap它们两个内部实现方式的数组的初始大小和扩容的方式。HashTable中hash数组默认大小是11，增加的方式是 old\*2+1。HashMap中hash数组的默认大小是16，而且一定是2的指数。
 
+
+链接： [https:\/\/www.nowcoder.com\/questionTerminal\/c5e932bcec3a46cbb9976eea0783e555](https://www.nowcoder.com/questionTerminal/c5e932bcec3a46cbb9976eea0783e555)
+
+来源：牛客网
 
