@@ -20,15 +20,39 @@ java集合类主要由两个接口派生而出：Collection，Map
 
 常用方法：
 
-boolean add\(\)
+查看当前数据转换
 
-boolean addAll\(\)
+int size\(\)
 
-boolean remove\(\)
+boolean isEmpty\(\)
 
-boolean contains\(\)
+
+
+boolean add\(Object O\)
+
+boolean addAll\(Collection c\)
+
+
+
+boolean remove\(Object O\)
+
+boolean removeAll\(Collection c\)
+
+boolean retainAll\(Collection c\)
+
+boolean clear\(\)
+
+
+
+boolean contains\(Object O\)
+
+boolean containsAll\(Collection c\)
+
+
 
 Iterator iterator\(\)
+
+Object\[\] toArray\(\)
 
 ## List
 
