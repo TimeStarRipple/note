@@ -6,7 +6,9 @@
 
 java集合类主要由两个接口派生而出：Collection，Map
 
-他们石java集合框架的跟接口，两个接口包含了一些子接口以及
+他们石java集合框架的跟接口，两个接口包含了一些子接口以及实现类。
+
+下面是Collection的继承树：
 
 ![](collection-1.png)
 
