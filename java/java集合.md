@@ -130,8 +130,6 @@ SortedSet（接口）--&gt;TreeSet：可以排序的，默认自然排序，从�
 
 EnumSet：以位向量进行存储，存储紧凑，占用内存小，效率高，不可以为null，没有构造方法，通过使用集合（值是同一个枚举类的）以及枚举类创建
 
-
-
 #### 性能间的比较：
 
 HashSet会比TreeSet性能好，因为TreeSet要额外用红黑树维护排序
@@ -140,11 +138,17 @@ HashSet在插入，删除，查找方面会比LinkedHashSet好，因为后者使
 
 EnumSet效率高，但是限制大，值必须是同一个枚举类的
 
-#### 
-
 #### 对象比较：
 
 实现Comparable接口，里面有一个compareTo的方法是比较方法，返回0为相等，返回整数是调用他的对象更大，负数是更小，请保证它的结果和equals相同，对于TreeSet来说，它会使用compareTo进行判定是否相等，相等是不允许添加的
+
+#### 同步：
+
+以上三种集合均不同步，要用工具类在创建时使用同步方法创建
+
+```java
+SortedSet<String> strings = Collections.synchronizedSortedSet(new TreeSet<String>());
+```
 
 ## Map
 
