@@ -132,6 +132,10 @@ EnumSet
 
 性能间的比较：
 
+
+
+注：对象比较：
+
 实现Comparable接口，里面有一个compareTo的方法是比较方法
 
 ## Map
