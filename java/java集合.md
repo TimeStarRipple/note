@@ -26,9 +26,13 @@ int size\(\)：数据个数
 
 boolean isEmpty\(\)：是否排空，空为true
 
+新增：
+
 boolean add\(Object O\)：添加数据，成功返回true
 
 boolean addAll\(Collection c\)：添加数据，成功返回true
+
+删除：
 
 boolean remove\(Object O\)：删除数据，成功返回true
 
@@ -38,9 +42,13 @@ boolean retainAll\(Collection c\)：删除非集合c中的数据，取两者交�
 
 boolean clear\(\)：清空集合
 
+查找：
+
 boolean contains\(Object O\)：是否包含对象
 
 boolean containsAll\(Collection c\)：是否包含集合
+
+转换：
 
 Iterator iterator\(\)：转换成迭代器
 
