@@ -54,6 +54,8 @@ Iterator iterator\(\)：转换成迭代器
 
 Object\[\] toArray\(\)：把集合转化成一个数组
 
+
+
 ## List
 
 描述：有序，重复的集合
