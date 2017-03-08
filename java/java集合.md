@@ -34,7 +34,7 @@ boolean addAll\(Collection c\)：添加数据，成功返回true
 
 删除：
 
-boolean remove\(Object O\)：删除数据，成功返回true
+boolean remove\(Object O\)：删除数据O，如果有多个，只删除第一个，成功返回true
 
 boolean removeAll\(Collection c\)：删除所有数据，成功返回true
 
