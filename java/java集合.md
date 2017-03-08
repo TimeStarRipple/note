@@ -6,6 +6,8 @@
 
 java集合类主要由两个接口派生而出：Collection，Map
 
+两个接口包含了一些子接口
+
 ![](collection-1.png)
 
 ![](/java/images/collection-2.png)
