@@ -54,8 +54,6 @@ Iterator iterator\(\)：转换成迭代器
 
 Object\[\] toArray\(\)：把集合转化成一个数组
 
-
-
 ### 遍历的方法
 
 for
@@ -83,6 +81,8 @@ foreach
 list.forEach(str -> System.out.println(str));
 ```
 
+所有遍历都不能在遍历的时候使用集合本身删除集合要不会报错
+
 ## Iterator
 
 Iterator迭代器：采用快速失败机制，一旦在迭代过程中发现集合被修改，程序会CocurrentModificationException异常，避免其他线程对集合修改，而引发问题
@@ -106,7 +106,7 @@ while (iterator.hasNext())
 list.forEach(str -> System.out.println(str));
 ```
 
-迭代器还是指向了原来数组的元素，你可以使用iterator删除他的值，但无法的值
+迭代器还是指向了原来数组的元素，你可以使用iterator删除他的值，但无法改变的值，因为他仅仅是值传递
 
 ## List
 
