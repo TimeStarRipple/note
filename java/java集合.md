@@ -224,11 +224,13 @@ Hashtable
 --&gt;Properties：读写文件属性  
 HashMap：hash值对应地址  
 --&gt;LinkedHashMap：链表  
-SortedMap（接口）--&gt;TreeMap
+SortedMap（接口）--&gt;TreeMap排序，结构红黑树
 
 WeakHashMap：弱引用，可能会被垃圾回收
 
-EnumMap
+IdentityHashMap：要求key1==key2才判定两个值相等
+
+EnumMap：不能有null，数组存储，采用枚举类创建
 
 性能间的比较：
 
