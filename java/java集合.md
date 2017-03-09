@@ -112,7 +112,7 @@ list.forEach(str -> System.out.println(str));
 
 描述：无序，不可重复的集合
 
-常用的集合：
+#### 接口及实现类：
 
 HashSet：快速找到值，可以为null  
 --&gt;LinkedHashSet：记录插入顺序，查找性能略低，但是迭代访问有很好的性能  
@@ -122,17 +122,17 @@ EnumSet：以位向量进行存储，存储紧凑，占用内存小，效率高�
 
 #### 性能间的比较：
 
-HashSet会比TreeSet性能好，因为TreeSet要额外用红黑树维护排序
+* HashSet会比TreeSet性能好，因为TreeSet要额外用红黑树维护排序
 
-HashSet在插入，删除，查找方面会比LinkedHashSet好，因为后者使用了链表，需要维护插入顺序，但是后者遍历方便
+* HashSet在插入，删除，查找方面会比LinkedHashSet好，因为后者使用了链表，需要维护插入顺序，但是后者遍历方便
 
-EnumSet效率高，但是限制大，值必须是同一个枚举类的
+* EnumSet效率高，但是限制大，值必须是同一个枚举类的
 
 #### 对象比较：
 
-自然排序：实现Comparable接口，里面有一个compareTo的方法是比较方法，返回0为相等，返回整数是调用他的对象更大，负数是更小，请保证它的结果和equals相同，对于TreeSet来说，它会使用compareTo进行判定是否相等，相等是不允许添加的
+* 自然排序：实现Comparable接口，里面有一个compareTo的方法是比较方法，返回0为相等，返回整数是调用他的对象更大，负数是更小，请保证它的结果和equals相同，对于TreeSet来说，它会使用compareTo进行判定是否相等，相等是不允许添加的
 
-定制排序：实现Comparator接口，里面有一个compare方法，用于实现按照一定的排序方法排序
+* 定制排序：实现Comparator接口，里面有一个compare方法，用于实现按照一定的排序方法排序
 
 #### 同步：
 
@@ -146,6 +146,8 @@ SortedSet<String> strings = Collections.synchronizedSortedSet(new TreeSet<String
 
 队列
 
+#### 接口及实现类：
+
 PriorityQueue：实现类，不是纯粹的队列，对插入的数据进行了排序  
 Deque：接口，双端队列，可以用作栈，默认长度16
 
@@ -156,6 +158,8 @@ Deque --&gt; LinkedList：实现类，基于链表实现，不仅是提供了lis
 ## List
 
 描述：有序，重复的集合
+
+#### 接口及实现类：
 
 ArrayList：实现类，不同步，jdk1.5，长度默认为10，底层实现和Vector相同  
 Vector：实现类，同步，jdk1.0，很多老方法，名字长，又实现了一些同样作用的短方法，效率低
@@ -232,7 +236,7 @@ IdentityHashMap：要求key1==key2才判定两个值相等
 
 EnumMap：不能有null，数组存储，采用枚举类创建
 
-性能间的比较：
+#### 性能间的比较：
 
 HashMap要比Hashtable性能好，因为Hashtable比较早，技术比较老。
 
@@ -241,8 +245,6 @@ TreeMap试集合总是处于排序状态，有这个要求可以使用这个Map�
 LinkedHashMap存在链表，迭代访问的时候效率会高
 
 EnumMap性能最好，但是只能使用同一个枚举类的值
-
-## 
 
 ## 问题
 
@@ -264,4 +266,16 @@ EnumMap性能最好，但是只能使用同一个枚举类的值
 链接： [https:\/\/www.nowcoder.com\/questionTerminal\/c5e932bcec3a46cbb9976eea0783e555](https://www.nowcoder.com/questionTerminal/c5e932bcec3a46cbb9976eea0783e555)
 
 来源：牛客网
+
+### 2.HashMap以及HashSet的实现
+
+采用hash算法来决定当前集合存储位置，采用数组加链表的形式在存储集合，如下图：
+
+![](/java/images/collection-3.png)
+
+正常hash的查询效率是O（1）
+
+一旦发生hash冲突，也就是插入值，hashcode相等，但是equals不相等。就会采用链表的形式，插入到当前链表的最后，这样查询效率变低，可能达到O\(n\)，java8当hash冲突过多时采用红黑树，减少效率到O\(logn\)
+
+
 
