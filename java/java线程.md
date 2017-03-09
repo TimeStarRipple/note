@@ -25,9 +25,25 @@ java采用抢占式多任务操作策略
 
 ## 线程的创建和启动
 
-1. 继承Thread类创建线程类：定义Thread类的子类，并重写该类的run（）方法，该run（）方法的方法体就代表了线程需要执行的任务
-2. 实现Runnable接口创建线程类：
-3. 使用Callable和Future创建线程
+### 继承Thread类创建线程类：（无法使线程共享实例变量）
+
+1. 定义Thread类的子类，并重写该类的run（）方法，该run（）方法的方法体就代表了线程需要执行的任务
+2. 创建Thread子类实例
+3. 调用线程对象的start方法启动线程
+
+### 实现Runnable接口创建线程类：（可以使线程共享实例变量）
+
+1. 定义Runnable接口实现类，并重写该接口的run（）方法，作为线程执行体
+2. 创建Runnable实现类实例，并以此实例作为Thread的target来创建Thread对象，该Thread对象才是真正的线程对象
+
+### 使用Callable和Future创建线程：（除了共享还能返回值以及抛出异常）
+
+1. 创建Callable接口的实现类，并实现call方法，将call方法将作为线程执行体，还有返回值，再创建Callable实现类的实例
+2. 使用FutureTask类来包装Callable对象，该对象封装了该Callable对象的call（）方法的返回值
+3. 使用FutureTask对象来作为Thread对象的target创建并启动新线程
+4. 使用FutureTask对象的get（）方法来获取子线程执行结束后的返回值
+
+
 
 ### 不同线程创建方法的优劣
 
