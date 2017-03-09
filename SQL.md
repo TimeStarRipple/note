@@ -30,7 +30,7 @@ update employees set department_id = 70 where employee_id = 113;
 
 1、自然连接
 
-mysql自己选出连接的几张表中相同字符进行配对
+mysql自己选出连接的几张表中相同字符进行比较
 
 **1、内联接**
 
