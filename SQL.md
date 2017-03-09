@@ -85,6 +85,11 @@ select O.ID, O.ORDER_NUMBER, C.ID, C.NAME from ORDERS O , CUSTOMERS C where O.ID
 select O.ID,O.ORDER_NUMBER,C.ID, C.NAME from ORDERS O cross join CUSTOMERS C where O.ID=1;
 ```
 
+### 连接效率
+
+1. 一般使用内连接，外链接效率低一些，交叉连接最低
+2. 可以在连接字段上面加索引
+
 ### 范式类别
 
 目前关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、巴斯-科德范式（BCNF）、第四范式\(4NF）和第五范式（5NF，又称完美范式）。
