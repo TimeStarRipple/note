@@ -317,7 +317,7 @@ Collection singletonXxx（Collection c）
 
 容量：hash表中可以存储元素的位置称为桶，hash表中桶的数量称之为容量
 
-初始化容量：Map创建时，初始化桶的数量
+初始化容量：Map创建时，初始化桶的数量，默认是16
 
 尺寸：当前hash表记录的数量
 
