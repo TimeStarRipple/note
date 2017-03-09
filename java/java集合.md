@@ -113,8 +113,16 @@ list.forEach(str -> System.out.println(str));
 描述：有序，重复的集合
 
 ArrayList  
-Vector  
+Vector
+
+--&gt;Stack  
 LinkedList
+
+
+
+数组转化List
+
+Arrays工具类采用toList\(\)，可以将数组转化成固定的不可以删除和添加的List
 
 性能间的比较：
 
