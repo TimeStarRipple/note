@@ -108,6 +108,15 @@ public synchronized void draw（double drawAmount）{
 
 synchronized 可以修饰代码块，方法，不能修饰构造器，成员变量
 
+3.同步锁
+
+```java
+ReentrantLock lock = new ReentrantLock()
+lock.lock()
+//方法体
+lock.unlock()
+```
+
 ## 线程通信
 
 ## 线程安全
