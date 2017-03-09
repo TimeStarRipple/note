@@ -108,6 +108,14 @@ list.forEach(str -> System.out.println(str));
 
 迭代器还是指向了原来数组的元素，你可以使用iterator删除他的值，但无法改变的值，因为他仅仅是值传递
 
+#### 古老的迭代器：Enumeration
+
+jdk1.0出来的，方法比较繁琐，而且没有提供remove方法
+
+Vector，Stack，Hashtable遍历都是用这个集合类，新的集合都不在支持该迭代器
+
+
+
 ## Set
 
 描述：无序，不可重复的集合
@@ -276,6 +284,4 @@ EnumMap性能最好，但是只能使用同一个枚举类的值
 正常hash的查询效率是O（1）
 
 一旦发生hash冲突，也就是插入值，hashcode相等，但是equals不相等。就会采用链表的形式，插入到当前链表的最后，这样查询效率变低，可能达到O\(n\)，java8当hash冲突过多时采用红黑树，减少效率到O\(logn\)
-
-
 
