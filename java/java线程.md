@@ -88,7 +88,7 @@ java采用抢占式多任务操作策略
 
 ## 线程同步
 
-1.同步代码块
+### 1.同步代码块
 
 加锁，修改，释放锁
 
@@ -98,7 +98,7 @@ synchronized（obj）{
 }
 ```
 
-2.同步方法
+### 2.同步方法
 
 ```java
 public synchronized void draw（double drawAmount）{
@@ -108,7 +108,7 @@ public synchronized void draw（double drawAmount）{
 
 synchronized 可以修饰代码块，方法，不能修饰构造器，成员变量
 
-3.同步锁
+### 3.同步锁
 
 ```java
 ReentrantLock lock = new ReentrantLock()
@@ -117,7 +117,11 @@ lock.lock()
 lock.unlock()
 ```
 
+### 注：死锁
+
 ## 线程通信
+
+采用wait\(\)，notify\(\)，和notifyAll\(\)进行通信，要求使用synchronized关键字来保持同步
 
 ## 线程安全
 
