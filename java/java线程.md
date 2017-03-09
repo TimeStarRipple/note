@@ -121,7 +121,15 @@ lock.unlock()
 
 ## 线程通信
 
-采用wait\(\)，notify\(\)，和notifyAll\(\)进行通信，要求使用synchronized关键字来保持同步
+### 采用wait\(\)，notify\(\)，和notifyAll\(\)进行通信
+
+要求使用synchronized关键字来保持同步
+
+### 使用Condition控制线程通信
+
+要求使用lock方法来保持同步
+
+### 使用阻塞队列控制线程通信
 
 ## 线程安全
 
