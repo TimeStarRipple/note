@@ -226,7 +226,7 @@ HashMap：hash值对应地址
 --&gt;LinkedHashMap：链表  
 SortedMap（接口）--&gt;TreeMap
 
-WeakHashMap：弱引用
+WeakHashMap：弱引用，可能会被垃圾回收
 
 EnumMap
 
