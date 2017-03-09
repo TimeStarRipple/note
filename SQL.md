@@ -14,6 +14,20 @@
 
 * 传递依赖：A-&gt;B-&gt;C,则C传递依赖A
 
+### SQL语句
+
+```
+select * from departments where department_id = 1
+
+insert into departments (department_id, department_name ) values (30, 'Purchasing' );
+
+delete from departments where department_name = 'Finance';
+
+update employees set department_id = 70 where employee_id = 113;
+```
+
+
+
 ### 范式类别
 
 目前关系数据库有六种范式：第一范式（1NF）、第二范式（2NF）、第三范式（3NF）、巴斯-科德范式（BCNF）、第四范式\(4NF）和第五范式（5NF，又称完美范式）。
