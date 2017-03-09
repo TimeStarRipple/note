@@ -256,7 +256,7 @@ EnumMap性能最好，但是只能使用同一个枚举类的值
 
 提供了大量的方法对集合元素进行排序，查询，修改等操作，以及提供了将集合对象设置不可变和进行同步控制的方法
 
-排序：
+#### 排序：
 
 void reverse（List list）反序
 
@@ -264,7 +264,7 @@ void sort（List list）自然排序
 
 void sort（List list，Comparator c）规定排序
 
-查询：
+#### 查询：
 
 Object max（Collection coll）自然排序最大值
 
@@ -274,9 +274,17 @@ Object min（Collection coll）自然排序最小值
 
 Object min（Collection coll，Comparator com）定制排序最小值
 
-同步：
+#### 修改：
 
-Collection synchronizedXxx（）
+boolean replaceAll（List list， Object oldVal，Object newVal）
+
+#### 同步：
+
+Collection synchronizedXxx（Collection c）
+
+#### 不可变：
+
+Collection singletonXxx（Collection c）
 
 ## 问题
 
