@@ -170,8 +170,10 @@ EnumMap
 
 ## Queue
 
-队列  
-Deque：双端队列，可以用作栈
+队列
+
+PriorityQueue：实现类，不是纯粹的队列，对插入的数据进行了排序  
+Deque：接口，双端队列，可以用作栈
 
 --&gt;ArrayDeque：
 
