@@ -217,9 +217,7 @@ Set entrySet（）
 
 Collection values（）
 
-
-
-#### 接口及实现类： 
+#### 接口及实现类：
 
 Hashtable
 
@@ -227,6 +225,8 @@ Hashtable
 HashMap：hash值对应地址  
 --&gt;LinkedHashMap：链表  
 SortedMap（接口）--&gt;TreeMap
+
+WeakHashMap：弱引用
 
 EnumMap
 
