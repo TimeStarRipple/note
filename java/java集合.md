@@ -270,7 +270,7 @@ Object min（Collection coll）
 
 Object min（Collection coll，Comparator com）
 
-
+Collection synchronizedXxx（）
 
 ## 问题
 
