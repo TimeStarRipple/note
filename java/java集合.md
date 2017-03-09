@@ -1,4 +1,4 @@
-# t对象对象对象对象java集合
+# java集合
 
 ## 定义
 
@@ -177,10 +177,55 @@ Arrays工具类采用toList\(\)，可以将数组转化成固定的不可以删�
 
 ## Map
 
-描述：有映射关系的集合  
-Hashtable  
-HashMap  
---&gt;LinkedHashMap  
+描述：有映射关系的集合
+
+#### 方法
+
+查看信息：
+
+boolean isEmpty（）
+
+int size（）
+
+判定：
+
+boolean containsKey（Object key）
+
+boolean containsValue（Object value）
+
+添加：
+
+Object put（Object key，Object value）
+
+void putAll（Map m）
+
+删除：
+
+boolean remove（Object key，Object value）
+
+Object remove（Object key）
+
+void clear（）
+
+查找：
+
+Object get（Object key）
+
+Set keySet（）
+
+Set entrySet（）
+
+Collection values（）
+
+
+
+#### 接口及实现类： 
+
+Hashtable
+
+--&gt;Properties：读写文件属性  
+HashMap：hash值对应地址  
+--&gt;LinkedHashMap：链表  
 SortedMap（接口）--&gt;TreeMap
 
 EnumMap
