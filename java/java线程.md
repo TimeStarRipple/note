@@ -100,6 +100,14 @@ synchronized（obj）{
 
 2.同步方法
 
+```java
+public synchronized void draw（double drawAmount）{
+    //同步方法
+}
+```
+
+synchronized 可以修饰代码块，方法，不能修饰构造器，成员变量
+
 ## 线程通信
 
 ## 线程安全
