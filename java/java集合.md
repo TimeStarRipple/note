@@ -252,11 +252,25 @@ LinkedHashMap存在链表，迭代访问的时候效率会高
 
 EnumMap性能最好，但是只能使用同一个枚举类的值
 
-
-
 ### Collections：操作集合的工具类
 
 提供了大量的方法对集合元素进行排序，查询，修改等操作，以及提供了将集合对象设置不可变和进行同步控制的方法
+
+void reverse（List list）反序
+
+void sort（List list）自然排序
+
+void sort（List list，Comparator c）
+
+Object max（Collection coll）
+
+Object max（Collection coll，Comparator com）
+
+Object min（Collection coll）
+
+Object min（Collection coll，Comparator com）
+
+
 
 ## 问题
 
@@ -285,9 +299,7 @@ EnumMap性能最好，但是只能使用同一个枚举类的值
 
 ![](/java/images/collection-3.png)
 
-正常hash的查询效率是O（1）
-
-一旦发生hash冲突，也就是插入值，hashcode相等，但是equals不相等。就会采用链表的形式，插入到当前数组对应数据的链表的最后，这样查询效率变低，可能达到O\(n\)，java8在hash冲突过多时采用红黑树，减少效率到O\(logn\)
+#### 概念
 
 容量：hash表中可以存储元素的位置称为桶，hash表中桶的数量称之为容量
 
@@ -298,4 +310,10 @@ EnumMap性能最好，但是只能使用同一个枚举类的值
 负载因子：等于尺寸除以容量的值
 
 负载极限：当前map的最大负载因子，一旦达到了这个最大的负载因子，新建一个容量翻倍的容器，然后Map重新指向它
+
+#### 查询效率
+
+正常hash的查询效率是O（1）
+
+一旦发生hash冲突，也就是插入值，hashcode相等，但是equals不相等。就会采用链表的形式，插入到当前数组对应数据的链表的最后，这样查询效率变低，可能达到O\(n\)，java8在hash冲突过多时采用红黑树，减少效率到O\(logn\)
 
