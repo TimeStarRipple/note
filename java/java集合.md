@@ -108,22 +108,6 @@ list.forEach(str -> System.out.println(str));
 
 迭代器还是指向了原来数组的元素，你可以使用iterator删除他的值，但无法改变的值，因为他仅仅是值传递
 
-## List
-
-描述：有序，重复的集合
-
-ArrayList  
-Vector
-
---&gt;Stack  
-LinkedList
-
-数组转化List
-
-Arrays工具类采用toList\(\)，可以将数组转化成固定的不可以删除和添加的List
-
-性能间的比较：
-
 ## Set
 
 描述：无序，不可重复的集合
@@ -158,6 +142,37 @@ EnumSet效率高，但是限制大，值必须是同一个枚举类的
 SortedSet<String> strings = Collections.synchronizedSortedSet(new TreeSet<String>());
 ```
 
+## Queue
+
+队列
+
+PriorityQueue：实现类，不是纯粹的队列，对插入的数据进行了排序  
+Deque：接口，双端队列，可以用作栈，默认长度16
+
+--&gt;ArrayDeque：实现类，用数组实现
+
+Deque --&gt; LinkedList：实现类，基于链表实现，不仅是提供了list功能而且，而且提供了双端队列和栈的功能
+
+## List
+
+描述：有序，重复的集合
+
+ArrayList：实现类，不同步，jdk1.5，Vector的非同步实现  
+Vector：实现类，同步，jdk1.0，很多老方法，名字长，又实现了一些同样作用的短方法，效率低
+
+--&gt;Stack：实现类，栈，但是效率低，建议用ArrayDeque代替  
+LinkedList：实现类，基于链表，也实现了Deque，
+
+数组转化List
+
+Arrays工具类采用toList\(\)，可以将数组转化成固定的不可以删除和添加的List
+
+#### 性能间的比较：
+
+ArrayList采用数组的形式，LinkedList采用链表，因此ArrayList适用于随机访问，但是LinkedList适用于插入，删除等操作。因为ArrayList的大小会重新分配。但是大多数情况，ArrayList的性能会比LinkedList好。
+
+ArrayList采用for循环进行遍历，LinkedList采用
+
 ## Map
 
 描述：有映射关系的集合  
@@ -170,16 +185,7 @@ EnumMap
 
 性能间的比较：
 
-## Queue
-
-队列
-
-PriorityQueue：实现类，不是纯粹的队列，对插入的数据进行了排序  
-Deque：接口，双端队列，可以用作栈，默认长度16
-
---&gt;ArrayDeque：实现类，用数组实现
-
-Collection是Set，Queue，List的父接口
+## 
 
 ## 问题
 
