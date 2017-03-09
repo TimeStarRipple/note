@@ -28,11 +28,13 @@ update employees set department_id = 70 where employee_id = 113;
 
 ### 连接
 
-1**、自然连接（natual join）**
+1**、自然连接（natural join）**
 
 通过MySql自己的判断完成连接过程，不需要指定连接条件。mysql自己使用连接的几张表中相同字符，作为连接条件
 
-
+```
+select * from one natural join two
+```
 
 2**、内联接（inner join）**
 
@@ -76,7 +78,7 @@ select   a.*,b.*   from   a   full   join   b     on   a.id=b.parent_id
 
 4**、交叉联接 （cross join）**
 
-交叉联接使用左表中的所有行，左表中的每一行与右表中的所有行组合。结果行数是两者行数乘积，交叉联接也称作笛卡尔积。以下有两种方式使用
+交叉联接使用左表中的所有行，左表中的每一行与右表中的所有行组合。结果行数是两者行数乘积，交叉联接也称作笛卡尔积。以下有两种方式使用：一种隐式不使用关键字，另一种使用关键字，结果相同。
 
 ```
 select O.ID, O.ORDER_NUMBER, C.ID, C.NAME from ORDERS O , CUSTOMERS C where O.ID=1;
