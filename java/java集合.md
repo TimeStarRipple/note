@@ -157,21 +157,23 @@ Deque --&gt; LinkedList：实现类，基于链表实现，不仅是提供了lis
 
 描述：有序，重复的集合
 
-ArrayList：实现类，不同步，jdk1.5，Vector的非同步实现  
+ArrayList：实现类，不同步，jdk1.5，长度默认为10，底层实现和Vector相同  
 Vector：实现类，同步，jdk1.0，很多老方法，名字长，又实现了一些同样作用的短方法，效率低
 
 --&gt;Stack：实现类，栈，但是效率低，建议用ArrayDeque代替  
-LinkedList：实现类，基于链表，也实现了Deque，
+LinkedList：实现类，基于链表，也实现了Deque，能提供双端队列和栈的功能
 
-数组转化List
+#### 数组转化List
 
 Arrays工具类采用toList\(\)，可以将数组转化成固定的不可以删除和添加的List
 
 #### 性能间的比较：
 
-ArrayList采用数组的形式，LinkedList采用链表，因此ArrayList适用于随机访问，但是LinkedList适用于插入，删除等操作。因为ArrayList的大小会重新分配。但是大多数情况，ArrayList的性能会比LinkedList好。
+* ArrayList采用数组的形式，LinkedList采用链表，因此ArrayList适用于随机访问，但是LinkedList适用于插入，删除等操作。因为ArrayList的大小会重新分配。但是大多数情况，ArrayList的性能会比LinkedList好。
 
-ArrayList采用for循环进行遍历，LinkedList采用
+* ArrayList采用for循环进行遍历，LinkedList采用迭代器遍历，性能会好。
+
+* 同步的话采用Collections工具类来进行控制，可以参考Set的同步控制。
 
 ## Map
 
