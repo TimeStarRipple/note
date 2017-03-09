@@ -234,6 +234,14 @@ EnumMap：不能有null，数组存储，采用枚举类创建
 
 性能间的比较：
 
+HashMap要比Hashtable性能好，因为Hashtable比较早，技术比较老。
+
+TreeMap试集合总是处于排序状态，有这个要求可以使用这个Map。
+
+LinkedHashMap存在链表，迭代访问的时候效率会高
+
+EnumMap性能最好，但是只能使用同一个枚举类的值
+
 ## 
 
 ## 问题
