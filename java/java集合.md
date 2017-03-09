@@ -118,8 +118,6 @@ Vector
 --&gt;Stack  
 LinkedList
 
-
-
 数组转化List
 
 Arrays工具类采用toList\(\)，可以将数组转化成固定的不可以删除和添加的List
@@ -173,7 +171,9 @@ EnumMap
 ## Queue
 
 队列  
-Deque--&gt;ArrayDeque
+Deque：双端队列，可以用作栈
+
+--&gt;ArrayDeque：
 
 Collection是Set，Queue，List的父接口
 
