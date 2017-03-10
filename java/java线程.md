@@ -131,9 +131,25 @@ lock.unlock()
 
 要求使用lock方法来保持同步
 
+```
+private final Lock lock = new ReentrantLock();
+private final Condition cond = lock.newCondition();
+...
+//加锁
+lock.lock()
+...
+//阻塞
+cond.await();
+...
+//唤醒
+cond.signalAll();
+...
+lock.unlock()
+```
+
 ### 使用阻塞队列（BlockingQueue）控制线程通信
 
-BlockingQueue是Queue的子接口，不是作为容器，而是实现线程同步，当生产者线程向队列里面放入元素时，如果队列满了，则线程阻塞，当消费者线程试图从队列里面取出数据，如果队列空了，那么线程堵塞
+BlockingQueue是Queue的子接口，不是作为容器，而是实现线程同步，当生产者线程向队列里面放入元素时，如果队列满了，则线程阻塞，当消费者线程试图从队列里面取出数据，如果队列空了，那么线程堵塞，`put()`方法添加，`take()`拿到
 
 ## 线程组
 
