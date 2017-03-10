@@ -147,8 +147,6 @@ BlockingQueue是Queue的子接口，不是作为容器，而是实现线程同�
 线程安全问题都是由全局变量及静态变量引起的。  
 若每个线程中对全局变量、静态变量只有读操作，而无写操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，否则就可能影响线程安全。
 
-
-
 ### 工具类
 
 #### ThreadLocal：
@@ -182,11 +180,15 @@ static <T> List<T> synchronizedList(List<T> list)
 * 以Concurrent开头的集合类，如ConcurrentHashMap、ConcurrentSkipListMap、ConcurrentSkipListSet、ConcurrentLinkedQueue和ConcurrentLinkedDeque
 * 以CopyOnWrite开头的集合类，如CopyOnWriteArrayList、CopyOnWriteArraySet
 
-Concurrent开头集合类：
+**Concurrent开头集合类：**
 
-锁定写操作，允许并发写入，不锁定读操作
+锁定写操作，允许并发写入，不锁定读操作，默认支持16个并发
 
+**CopyOnWrite开头的集合类：**
 
+底层采用复制的方式，在写入操作时，复制数据到新的空间中去操作，所以是线程安全的。
 
+但是由于写操作要经常复制，效率低
 
+读操作没有锁，很快，适用于读操作远大于写操作的情况
 
