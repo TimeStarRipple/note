@@ -125,7 +125,7 @@ lock.unlock()
 
 ### 采用wait\(\)，notify\(\)，和notifyAll\(\)进行通信
 
-要求使用synchronized关键字来保持同步
+要求使用synchronized关键字来保持同步，notify\(\)是随机选一个唤醒
 
 ### 使用Condition控制线程通信
 
