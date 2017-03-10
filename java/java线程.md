@@ -133,10 +133,60 @@ lock.unlock()
 
 BlockingQueue是Queue的子接口，不是作为容器，而是实现线程同步，当生产者线程向队列里面放入元素时，如果队列满了，则线程阻塞，当消费者线程试图从队列里面取出数据，如果队列空了，那么线程堵塞
 
+## 线程池
+
+系统启用一个新线程的成本比较高，因为他涉及到与操作系统的交互。使用线程池可以提高很多性能
+
+* 减少线程创建的成本
+* 控制当前系统中并发线程的数量，线程池里有多少就只能用多少
+
 ## 线程安全
 
 如果你的代码所在的进程中有多个线程在同时运行，而这些线程可能会同时运行这段代码。如果每次运行结果和单线程运行的结果是一样的，而且其他的变量的值也和预期的是一样的，就是线程安全的。  
 或者说:一个类或者程序所提供的接口对于线程来说是原子操作或者多个线程之间的切换不会导致该接口的执行结果存在二义性,也就是说我们不用考虑同步的问题。  
 线程安全问题都是由全局变量及静态变量引起的。  
 若每个线程中对全局变量、静态变量只有读操作，而无写操作，一般来说，这个全局变量是线程安全的；若有多个线程同时执行写操作，一般都需要考虑线程同步，否则就可能影响线程安全。
+
+
+
+### 工具类
+
+#### ThreadLocal：
+
+Thread Local Variable（线程局部变量），为每一个使用该变量的值都提供一个副本
+
+```java
+ThreadLocal<String> name = new ThreadLocal<>();
+//..
+public void run(){
+  //对name的使用
+}
+```
+
+主要用于隔离多个线程之间的存储空间，但如果线程间需要共享资源，就要使用同步，如果要隔离线程间的空间，就用ThreadLocal
+
+#### 包装线程不安全的集合
+
+使用Collections工具类的同步方法构建集合，可以使得结合变安全。
+
+```
+<T> Collection<T> synchronizedCollection(Collection<T> c)
+static <T> List<T> synchronizedList(List<T> list)
+...
+```
+
+#### 线程安全的集合类
+
+从java5开始，在java.util.concurrent包下提供了大量支持高效并发访问的集合接口和实现类
+
+* 以Concurrent开头的集合类，如ConcurrentHashMap、ConcurrentSkipListMap、ConcurrentSkipListSet、ConcurrentLinkedQueue和ConcurrentLinkedDeque
+* 以CopyOnWrite开头的集合类，如CopyOnWriteArrayList、CopyOnWriteArraySet
+
+Concurrent开头集合类：
+
+锁定写操作，允许并发写入，不锁定读操作
+
+
+
+
 
