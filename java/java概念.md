@@ -66,9 +66,23 @@ java继承通过extends关键字来实现，实现继承的类被称为子类，
 
 ## 内部类
 
-* 成员内部类
+* 成员内部类，可以分成静态内部类，和非静态内部类
 * 局部内部类
-* 匿名内部类
+* 匿名内部类：必须继承一个父类，或实现一个接口，但最多只能继承一个接口
+
+```
+class Test1{
+
+    public static class Test2{
+    }
+
+    public class Test3{
+    }
+}
+...
+Test1.Test2 m = new Test1.Test2();
+Test1.Test3 t = new Test1().new Test3();
+```
 
 
 
