@@ -43,9 +43,103 @@
 
 基于继承的实现机制主要表现在父类和继承该父类的一个或多个子类对某些方法的重写，多个子类对同一方法的重写可以表现出不同的行为。
 
+```java
+public class Wine {
+    private String name;
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Wine(){
+    }
+    
+    public String drink(){
+        return "喝的是 " + getName();
+    }
+    
+    /**
+     * 重写toString()
+     */
+    public String toString(){
+        return null;
+    }
+}
+
+public class JNC extends Wine{
+    public JNC(){
+        setName("JNC");
+    }
+    
+    /**
+     * 重写父类方法，实现多态
+     */
+    public String drink(){
+        return "喝的是 " + getName();
+    }
+    
+    /**
+     * 重写toString()
+     */
+    public String toString(){
+        return "Wine : " + getName();
+    }
+}
+
+public class JGJ extends Wine{
+    public JGJ(){
+        setName("JGJ");
+    }
+    
+    /**
+     * 重写父类方法，实现多态
+     */
+    public String drink(){
+        return "喝的是 " + getName();
+    }
+    
+    /**
+     * 重写toString()
+     */
+    public String toString(){
+        return "Wine : " + getName();
+    }
+}
+
+public class Test {
+    public static void main(String[] args) {
+        //定义父类数组
+        Wine[] wines = new Wine[2];
+        //定义两个子类
+        JNC jnc = new JNC();
+        JGJ jgj = new JGJ();
+        
+        //父类引用子类对象
+        wines[0] = jnc;
+        wines[1] = jgj;
+        
+        for(int i = 0 ; i < 2 ; i++){
+            System.out.println(wines[i].toString() + "--" + wines[i].drink());
+        }
+        System.out.println("-------------------------------");
+
+    }
+}
+OUTPUT:
+Wine : JNC--喝的是 JNC
+Wine : JGJ--喝的是 JGJ
+-------------------------------
+```
+
 ### 接口
 
 在接口的多态中，指向接口的引用必须是指定这实现了该接口的一个类的实例程序，在运行时，根据对象引用的实际类型来执行对应的方法。
+
+Spring中能有比较好的体现
 
 ## 
 
